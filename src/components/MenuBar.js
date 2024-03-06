@@ -46,7 +46,6 @@ const items = [
 
     ]),
 
-    // getItem('Invite Teammates', 'invite', <MailOutlined />),
 
 ];
 
@@ -78,7 +77,7 @@ const MenuBar = () => {
                 onClick={onClick}
                 style={{
                     width: 256,
-                    // backgroundColor: "red",
+
                     height: "75vh"
                 }}
                 defaultSelectedKeys={['1']}
