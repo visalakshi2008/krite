@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppstoreOutlined, CustomerServiceOutlined, FolderOutlined, MailOutlined, QuestionOutlined, SettingOutlined, UserAddOutlined } from '@ant-design/icons';
 import { Avatar, Button, Menu, Typography } from 'antd';
 
@@ -45,21 +45,29 @@ const items = [
     getItem('Legal', 'legal', <AppstoreOutlined />, [
 
     ]),
-
-
 ];
 
 const MenuBar = () => {
+    const [menuHeight, setMenuHeight] = useState(0);
+
+    useEffect(() => {
+        const menu = document.getElementById('menu');
+        if (menu) {
+            setMenuHeight(menu.clientHeight);
+        }
+    }, []);
+
     const onClick = (e) => {
         console.log('click ', e);
     };
+
     return (
-        <>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <div style={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                // paddingBlock: "10px"
+
             }}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                     <AppstoreOutlined
@@ -73,20 +81,21 @@ const MenuBar = () => {
                     <Avatar />
                 </div>
             </div>
-            <Menu
-                onClick={onClick}
-                style={{
-                    width: 256,
-
-                    height: "75vh"
-                }}
-                defaultSelectedKeys={['1']}
-                defaultOpenKeys={['sub1']}
-                mode="inline"
-                items={items}
-            />
+            <div id="menu" style={{ flex: 1, overflowY: 'auto' }}>
+                <Menu
+                    onClick={onClick}
+                    style={{
+                        width: 256,
+                        height: "70vh"
+                    }}
+                    defaultSelectedKeys={['1']}
+                    defaultOpenKeys={['sub1']}
+                    mode="inline"
+                    items={items}
+                />
+            </div>
             <div style={{ paddingLeft: "20px" }}>
-                <Button style={{ width: 200, marginBottom: "10px" }}><UserAddOutlined />Invite teamamtes</Button>
+                <Button style={{ width: 200, marginBottom: "10px", marginTop: "10%" }}><UserAddOutlined />Invite teammates</Button>
                 <Button style={{ width: 200, marginBottom: "10px" }}><QuestionOutlined />Help and first steps</Button>
                 <div style={{ display: "flex" }}>
                     <Button style={{ width: 140 }}><CustomerServiceOutlined />
@@ -94,10 +103,8 @@ const MenuBar = () => {
                     </Button>
                     <Button style={{ marginLeft: "10px", backgroundColor: "black", color: "white", width: 80 }}>Add bling</Button>
                 </div>
-
-
             </div>
-        </>
+        </div>
     );
 };
 
