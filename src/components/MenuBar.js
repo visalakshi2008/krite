@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { AppstoreOutlined, CustomerServiceOutlined, FolderOutlined, MailOutlined, QuestionOutlined, SettingOutlined, UserAddOutlined } from '@ant-design/icons';
 import { Avatar, Button, Menu, Typography } from 'antd';
 
@@ -48,14 +48,8 @@ const items = [
 ];
 
 const MenuBar = () => {
-    const [menuHeight, setMenuHeight] = useState(0);
 
-    useEffect(() => {
-        const menu = document.getElementById('menu');
-        if (menu) {
-            setMenuHeight(menu.clientHeight);
-        }
-    }, []);
+
 
     const onClick = (e) => {
         console.log('click ', e);
