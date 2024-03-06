@@ -17,7 +17,7 @@ function App() {
                 <div style={{ display: "flex", alignItems: "center", }}>
                     <Input size="large" placeholder="Search" prefix={<UserOutlined />}
                         style={{
-                            width: "100%", marginRight: "8px", marginRight: "50px"
+                            width: "100%", marginRight: "8px",
 
                         }} />
                     <CopyOutlined style={{ marginRight: "8px", paddingRight: "20px" }} />

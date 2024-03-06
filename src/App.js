@@ -1,7 +1,7 @@
 import './App.css';
-import { Button, Col, Dropdown, Image, Row, Typography } from "antd";
+import { Col, Row, } from "antd";
 import NavBar from './components/NavBar.js';
-import { AppleOutlined } from '@ant-design/icons';
+
 import MenuBar from './components/MenuBar.js';
 
 

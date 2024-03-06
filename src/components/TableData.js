@@ -70,22 +70,9 @@ const dataSource = [
 ];
 
 const TableData = () => {
-    const [filterText, setFilterText] = useState('');
+
     const [filteredDataSource, setFilteredDataSource] = useState([]);
-    const [selectedOption, setSelectedOption] = useState('');
 
-    const handleFilter = (e) => {
-        const searchText = e.target.value;
-        setFilterText(searchText);
-        const filteredData = dataSource.filter(item =>
-            item.name.toLowerCase().includes(searchText.toLowerCase())
-        );
-        setFilteredDataSource(filteredData);
-    };
-
-    const handleChange = (value) => {
-        setSelectedOption(value);
-    };
 
     const getRandomColor = () => {
         const neonColors = ['green', 'black', 'red', 'orange', 'magenta', 'blue'];
@@ -101,19 +88,19 @@ const TableData = () => {
             <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px", paddingLeft: "10px", paddingRight: "10px" }}>
 
                 <div >
-                    <Select defaultValue="All Brands" style={{ width: 120, marginLeft: 8, marginRight: 8 }} onChange={handleChange}>
+                    <Select defaultValue="All Brands" style={{ width: 120, marginLeft: 8, marginRight: 8 }} >
                         <Option value="">All Brands</Option>
                         <Option value="Jack">Jack</Option>
                         <Option value="Lucy">Lucy</Option>
                         <Option value="Joe">Joe</Option>
                     </Select>
-                    <Select defaultValue="Desk" style={{ width: 120, marginLeft: 8, marginRight: 8 }} onChange={handleChange}>
+                    <Select defaultValue="Desk" style={{ width: 120, marginLeft: 8, marginRight: 8 }} >
                         <Option value="">Desk</Option>
                         <Option value="Jack">Jack</Option>
                         <Option value="Lucy">Lucy</Option>
                         <Option value="Joe">Joe</Option>
                     </Select>
-                    <Select defaultValue="Tags" style={{ width: 120, marginRight: 8 }} onChange={handleChange}>
+                    <Select defaultValue="Tags" style={{ width: 120, marginRight: 8 }} >
                         <Option value="">Tags</Option>
                         <Option value="Jack">Jack</Option>
                         <Option value="Lucy">Lucy</Option>
