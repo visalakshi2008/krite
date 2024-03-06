@@ -71,8 +71,7 @@ const dataSource = [
 
 const TableData = () => {
 
-    const [filteredDataSource, setFilteredDataSource] = useState([]);
-
+   
 
     const getRandomColor = () => {
         const neonColors = ['green', 'black', 'red', 'orange', 'magenta', 'blue'];
